@@ -1,0 +1,20 @@
+{% assign works-gallery-rows = 4 %}
+<table class="works-gallery-preview">
+  <tbody>
+  {% for art in include.collection %}
+    {% assign row-index = forloop.index % works-gallery-rows %}
+    {% if row-index == 1 %}
+      <tr>
+    {% endif %}
+
+    <a href="{{ art.url | prepend: site.baseurl }}">
+      <img class="work-thumbnail" src="{{ art.picture | prepend: "/thumbnail" | prepend: site.baseurl }}"
+          title="{{ art.title }}" />
+    </a>
+
+    {% if row-index == 0 %}
+      </tr>
+    {% endif %}
+  {% endfor %}
+  </tbody>
+</table>

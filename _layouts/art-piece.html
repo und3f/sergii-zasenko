@@ -1,0 +1,20 @@
+---
+layout: default
+---
+  <div class="art-piece">
+
+      <img class="picture" src="{{ page.picture | prepend: site.baseurl }}" />
+
+      <p class="work-name">
+        {{ page.title }}, {{ page.date | date: "%Y" }}
+      </p>
+
+      <p class="work-details">
+        {{ page.work-technique }}, {{ page.work-size }}
+      </p>
+
+  </div>
+
+  <div class="works-gallery">
+    {% include works-gallery.html collection=site.art %}
+  </div>
