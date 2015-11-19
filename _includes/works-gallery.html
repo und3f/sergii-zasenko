@@ -1,20 +1,26 @@
-{% assign works-gallery-rows = 4 %}
-<table class="works-gallery-preview">
-  <tbody>
-  {% for art in include.collection %}
-    {% assign row-index = forloop.index % works-gallery-rows %}
-    {% if row-index == 1 %}
+<div class="works-gallery">
+  <table class="works-gallery-preview">
+    <tbody>
+    {% assign last_column = site.art_gallery.columns | minus: 1  %}
+
+    {% for art in include.collection %}
+      {% assign column-index = forloop.index | minus: 1 | modulo: site.art_gallery.columns %}
+      {% if column-index == 0 %}
       <tr>
-    {% endif %}
+      {% endif %}
 
-    <a href="{{ art.url | prepend: site.baseurl }}">
-      <img class="work-thumbnail" src="{{ art.picture | prepend: "/thumbnail" | prepend: site.baseurl }}"
-          title="{{ art.title }}" />
-    </a>
+        <td>
+          <a href="{{ art.url | prepend: site.baseurl }}">
+            <img class="work-thumbnail" src="{{ art.picture | prepend: "/thumbnail" | prepend: site.baseurl }}"
+                title="{{ art.title }}" />
+          </a>
+        </td>
 
-    {% if row-index == 0 %}
+      {% if column-index == last_column  or forloop.last %}
       </tr>
-    {% endif %}
-  {% endfor %}
-  </tbody>
-</table>
+      {% endif %}
+
+    {% endfor %}
+    </tbody>
+  </table>
+</div>

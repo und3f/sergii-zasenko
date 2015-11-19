@@ -1,6 +1,11 @@
+.art-piece {
+    padding-right: $spacing-unit * 2;
+    width: $spacing-unit * 10;
+}
+
 .art-piece img.picture {
-    max-width: 600px;
-    max-height: 300px;
+    max-height: $spacing-unit * 12;
+    max-width: $spacing-unit * 10;
 }
 
 .art-piece div.art-frame {
@@ -9,7 +14,30 @@
     height: 300px;
 }
 
-img.work-thumbnail {
-    max-width: 64px;
-    max-height: 64px;
+.art-piece, .art-gallery {
+    float: left;
+}
+
+.works-gallery {
+    background-color: $grey-gallery;
+    display: inline-block;
+}
+
+.works-gallery td {
+    text-align: center;
+    padding: 1px;
+}
+
+.work-info {
+    margin-top: $spacing-unit/3;
+}
+
+.work-name {
+    font-size: $small-font-size;
+    //display: block;
+}
+
+.work-details {
+    font-style: italic;
+    font-size: $extrasmall-font-size;
 }

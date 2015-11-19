@@ -5,16 +5,16 @@ layout: default
 
       <img class="picture" src="{{ page.picture | prepend: site.baseurl }}" />
 
-      <p class="work-name">
-        {{ page.title }}, {{ page.date | date: "%Y" }}
-      </p>
+      <div class="work-info">
+        <span class="work-name">
+          {{ page.title }}, {{ page.date | date: "%Y" }}, 
+        </span>
 
-      <p class="work-details">
-        {{ page.work-technique }}, {{ page.work-size }}
-      </p>
+        <span class="work-details">
+          {{ page.work-technique }}, {{ page.work-size }}
+        </span>
+      </div>
 
   </div>
 
-  <div class="works-gallery">
-    {% include works-gallery.html collection=site.art %}
-  </div>
+  {% include works-gallery.html collection=site.art %}

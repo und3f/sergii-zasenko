@@ -1,9 +1,8 @@
 ---
 layout: page
-title: Art
+short-title: Art
+title: The Art of Sergii Zasenko
 permalink: /art/
 ---
-
-The Art of Sergii Zasenko
 
 {% include works-gallery.html collection=site.art %}
